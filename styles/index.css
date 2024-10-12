@@ -7,9 +7,11 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 3rem;
 }
 
+body {
+	font-size: 3rem;
+}
 
 header {
 	padding: calc((1vh + 1vw)) calc((1vh + 1vw)*3);
@@ -17,17 +19,24 @@ header {
 
 .nav {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .nav-elem {
 	padding: calc((1vh + 1vw) / 2);
 	transition: 0.2s;
 	user-select: none;
+	border-radius: 5px;
 }
 
 .nav-elem:hover {
-	background-color: rgb(255, 148, 77);
+	background-color: tomato;
 	cursor: pointer;
+}
+
+.nav-elem:hover .active {
+	color: black;
+	transition: 0.2s;
 }
 
 .nav-elem:active {
@@ -39,6 +48,10 @@ header {
 	text-decoration: none;
 }
 
+.active {
+	color: tomato;
+	transition: 0.2s;
+}
 
 
 main {
@@ -80,11 +93,11 @@ td {
 
 
 
-
 footer {
 	padding: calc((1vh + 1vw)) calc((1vh + 1vw) * 3);
 	background-color: black;
 	color: white;
+	font-size: 2.5rem;
 }
 
 .contact {
@@ -95,4 +108,51 @@ footer {
 .contact a {
 	color: white;
 	text-decoration: none;
+}
+
+@media screen and (width <= 800px) {
+	#about-us img {
+		width: 62.5%;
+	}
+
+	nav {
+		justify-content: space-between;
+	}
+}
+
+@media screen and (width <= 600px) {
+	nav {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.nav-elem {
+		padding: calc((1vh + 1vw) / 3) calc((1vh + 1vw) / 2);
+	}
+
+	nav a {
+		font-size: 3.5rem;
+	}
+
+	h1, h2 {
+		text-align: center;
+	}
+
+	#about-us img {
+		width: 100%;
+	}
+
+	table {
+		font-size: 2.5rem;
+	}
+}
+
+@media screen and (width <= 400px) {
+	table {
+		font-size: 2rem;
+	}
+
+	footer {
+		font-size: 2rem;
+	}
 }
