@@ -190,6 +190,10 @@ textarea {
 	border-radius: 0;
 }
 
+.form-buttons button:hover {
+	scale: 0.97;
+}
+
 
 
 
