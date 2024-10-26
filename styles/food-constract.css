@@ -86,7 +86,7 @@ main {
 
 .food-elem p {
 	font-size: 3.5rem;
-	margin: calc((1vh + 1vw)) 0;
+
 }
 
 button {
@@ -130,6 +130,11 @@ form {
 	margin-top: calc(1vh + 1vw);
 }
 
+.order-elem {
+	display: flex;
+	flex-direction: column;
+}
+
 .form-block {
 	display: flex;
 	flex-direction: column;
@@ -138,7 +143,16 @@ form {
 }
 
 .form-block-wrapper {
-	max-width: 70%;
+	width: 70%;
+}
+
+.order-elem {
+	margin-top: calc(1vh + 1vw);
+	display: none;
+}
+
+.order-type-name {
+	font-weight: 900;
 }
 
 label {
@@ -188,6 +202,9 @@ textarea {
 	background-color: white;
 	border: 1px black solid;
 	border-radius: 0;
+	width: 45%;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .form-buttons button:hover {

@@ -29,7 +29,7 @@
 		<div class="block">
 			<h2>Выберите суп</h2>
 			<section id="soup" class="food">
-				<div class="food-elem" id="test">
+				<!-- <div class="food-elem" id="test">
 					<img src="./src/soups/gazpacho.jpg" alt="soup">
 					<p>195р</br>Гаспачо</p>
 					<span>350 г</span>
@@ -46,14 +46,14 @@
 					<p>270р</br>Норвежский суп</p>
 					<span>330 г</span>
 					<button>Добавить</button>
-				</div>
+				</div> -->
 			</section>
 		</div>
 
 		<div class="block">
 			<h2>Выберите главное блюдо</h2>
-			<section id="main-dish" class="food">
-				<div class="food-elem">
+			<section id="main_dish" class="food">
+				<!-- <div class="food-elem">
 					<img src="./src/main_course/friedpotatoeswithmushrooms1.jpg" alt="dish">
 					<p>150р</br>Жаренная картошка с грибами</p>
 					<span>250 г</span>
@@ -70,14 +70,14 @@
 					<p>225р</br>Котлеты из курицы с картофельным пюре</p>
 					<span>280 г</span>
 					<button>Добавить</button>
-				</div>
+				</div> -->
 			</section>
 		</div>
 
 		<div class="block">
 			<h2>Выберите напиток</h2>
-			<section id="drinks" class="food">
-				<div class="food-elem">
+			<section id="juice" class="food">
+				<!-- <div class="food-elem">
 					<img src="./src/beverages/orangejuice.jpg" alt="dish">
 					<p>120р</br>Апельсиновый сок</p>
 					<span>300 мл</span>
@@ -94,19 +94,51 @@
 					<p>110р</br>Морковный сок</p>
 					<span>300 мл</span>
 					<button>Добавить</button>
-				</div>
+				</div> -->
 			</section>
 		</div>
-		<!--сделайть заказ-->
+		<!--сделать заказ-->
 		<div class="make-order">
 			<h2>Сделать заказ</h2>
 			<form action="https://httpbin.org/post" method="post">
 				<div class="form-block">
 					<div class="form-block-wrapper">
 						<p>Ваш заказ</p>
-						<label for="soup">
+						<div id="soup_order" class="order-elem">
+							<p class="order-type-name">
+								Суп
+							</p>
+							<p class="order-type-description"></p>
+							<input class="order-type-description" type="hidden" name="soup">
+						</div>
+						<div id="main_dish_order" class="order-elem">
+							<p class="order-type-name">
+								Главное блюдо
+							</p>
+							<p class="order-type-description"></p>
+							<input class="order-type-description" type="hidden" name="main-dish">
+						</div>
+						<div id="juice_order" class="order-elem">
+							<p class="order-type-name">
+								Напиток
+							</p>
+							<p class="order-type-description"></p>
+							<input class="order-type-description" type="hidden" name="juice">
+						</div>
+						<div id="order_price" class="order-elem">
+							<p class="order-type-name">
+								Стоимость заказа
+							</p>
+							<p class="order-type-description"></p>
+							<input class="order-type-description" type="hidden" name="price">
+						</div>
+						<label for="comment">
+							<p>Комментарий к заказу</p>
+							<textarea rows="4" name="comment" id="comment"></textarea>
+						</label>
+						<!-- <label for="soup">
 							<p>Суп</p>
-							<select id="soup">
+							<select id="soup" required>
 								<option value="">--выберите суп--</option>
 								<option value="gazpacho">Гаспачо</option>
 								<option value="mushroom_soup">Грибной суп-пюре</option>
@@ -115,7 +147,7 @@
 						</label>
 						<label for="main-dish">
 							<p>Главное блюдо</p>
-							<select id="main-dish">
+							<select id="main-dish" required>
 								<option value="">--выберите главное блюдо--</option>
 								<option value="gazpacho">Жареная картошка с грибами</option>
 								<option value="mushroom_soup">Лазанья</option>
@@ -124,7 +156,7 @@
 						</label>
 						<label for="drinks">
 							<p>Напиток</p>
-							<select id="drinks">
+							<select id="drinks" required>
 								<option value="">--выберите напиток--</option>
 								<option value="gazpacho">Апельсиновый сок</option>
 								<option value="mushroom_soup">Яблочный сок</option>
@@ -134,7 +166,7 @@
 						<label for="comment">
 							<p>Комментарий к заказу</p>
 							<textarea rows="4" name="comment" id="comment"></textarea>
-						</label>
+						</label> -->
 					</div>
 				</div>
 				<div class="form-block">
@@ -142,23 +174,23 @@
 						<p>Ваши данные</p>
 						<label for="name">
 							<p>Имя</p>
-							<input value="" id="name" type="text" required>
+							<input name="name" value="" id="name" type="text" required>
 						</label>
 						<label for="email">
 							<p>Email</p>
-							<input value="" type="email" id="email" required>
+							<input name="email" value="" type="email" id="email" required>
 						</label>
 						<label class="row-flex-label" for="checkbox">
-							<input type="checkbox" id="checkbox" checked>
+							<input name="info" type="checkbox" id="checkbox" checked>
 							<p>Получать информацию о скидках и акциях</p>
 						</label>
 						<label for="telephone">
 							<p>Номер телефона</p>
-							<input value="" id="telephone" type="tel" required>
+							<input name="phone" value="" id="telephone" type="tel" required>
 						</label>
 						<label for="address">
 							<p>Адрес доставки</p>
-							<input value="" id="address" type="text" required>
+							<input name="address" value="" id="address" type="text" required>
 							<p><em>Доставка осуществляется только по Москве</em></p>
 						</label>
 						<div class="delivery">
@@ -174,12 +206,12 @@
 						</div>
 						<label for="delivery-time">
 							<p>Укажите время доставки</p>
-							<input value="" id="delivery-time" type="time" step="300" min="07:00" max="23:00" required>
+							<input name="time" value="" id="delivery-time" type="time" step="300" min="07:00" max="23:00" required>
 							<p><em>Доступное время доставки с 7:00 до 23:00</em></p>
 						</label>
 						<div class="form-buttons">
 							<button type="reset">Сбросить</button>
-							<button type="submit">Отправить</button>
+							<button id="send" type="submit">Отправить</button>
 						</div>
 					</div>
 				</div>
@@ -192,5 +224,6 @@
 			<a href="#">+7(000)-000-00-00</a>
 		</div>
 	</footer>
+	<script type="module" src="./scripts/food-constract/index.js"></script>
 </body>
 </html>

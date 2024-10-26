@@ -1,0 +1,76 @@
+const menu = [
+  {
+    img: "./src/soups/mushroom_soup.jpg",
+    price: 185,
+    name: "Грибной суп-пюре",
+    keyword: "mushroom",
+    weight: "330г",
+    category: "soup", 
+  },
+	{
+    img: "./src/soups/gazpacho.jpg",
+    price: 195,
+    name: "Гаспачо",
+    keyword: "gaspacho",
+    weight: "350",
+    category: "soup",
+  },
+  {
+    img: "./src/soups/norwegian_soup.jpg",
+    price: 270,
+    name: "Норвежский суп",
+    keyword: "norvezskiy",
+    weight: "330г",
+    category: "soup", 
+  },
+  {
+    img: "./src/main_course/friedpotatoeswithmushrooms1.jpg",
+    price: 150,
+    name: "Жареная картошка с грибами",
+    keyword: "friedpotato",
+    weight: "210г",
+    category: "main_dish", 
+  },
+  {
+    img: "./src/main_course/lasagna.jpg",
+    price: 385,
+    name: "Лазанья",
+    keyword: "lasagna",
+    weight: "310г",
+    category: "main_dish", 
+  },
+  {
+    img: "./src/main_course/chickencutletsandmashedpotatoes.jpg",
+    price: 225,
+    name: "Котлеты из курицы с картофельным пюре",
+    keyword: "chicken",
+    weight: "280г",
+    category: "main_dish", 
+  },
+  {
+    img: "./src/beverages/orangejuice.jpg",
+    price: 120,
+    name: "Апельсиновый сок",
+    keyword: "orange_juice",
+    weight: "300мл",
+    category: "juice", 
+  },
+  {
+    img: "./src/beverages/applejuice.jpg",
+    price: 90,
+    name: "Яблочный сок",
+    keyword: "apple_juice",
+    weight: "300мл",
+    category: "juice", 
+  },
+  {
+    img: "./src/beverages/carrotjuice.jpg",
+    price: 110,
+    name: "Морковный сок",
+    keyword: "carrot_juice",
+    weight: "300мл",
+    category: "juice", 
+  }
+];
+
+export default menu;
