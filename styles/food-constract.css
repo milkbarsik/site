@@ -64,10 +64,30 @@ main {
 	margin-bottom: calc((1vh + 1vw));
 }
 
+.filters {
+	padding: calc((1vh + 1vw));
+}
+
+.filter {
+	background-color: transparent;
+	color: rgb(24, 146, 0);
+	transition: 0.2s;
+}
+
+.active-filter {
+	background-color: rgba(24, 146, 0, 0.308);
+}
+
+.filter:hover {
+	color: rgb(11, 68, 0);
+	transform: translateY(-0.2rem);
+}
+
 .food {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: calc((1vh + 1vw));
+	grid-row-gap: calc((1vh + 1vw))
 }
 
 .food-elem {
