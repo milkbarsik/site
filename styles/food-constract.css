@@ -53,6 +53,44 @@ main {
 	text-decoration: none;
 }
 
+.combo-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: calc((1vh + 1vw) * 4);
+	grid-row-gap: calc((1vh + 1vw));
+	font-size: 2rem;
+	padding: 0 calc((1vh + 1vw) * 2);
+	margin: calc((1vh + 1vw) * 2) 0;
+}
+
+.combo-elems-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.combo-elem {
+	flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.combo-elem img {
+	width: 5rem;
+	border-radius: 0;
+	margin: 0;
+	transition: 0.1s;
+}
+
+.combo-elem img:hover {
+	transform: scale(1.05) translateY(-0.3rem);
+}
+
+.combo-elem p {
+	word-break: break-all;
+}
+
 .active {
 	color: tomato;
 	transition: 0.2s;
@@ -232,7 +270,23 @@ textarea {
 }
 
 
+#notif {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background-color: lightgray;
+	padding: calc((1vh + 1vw) * 2);
+	border-radius: 10px;
+}
 
+#notifP {
+	margin-bottom: 2rem;
+}
 
 
 footer {

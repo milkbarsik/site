@@ -1,4 +1,7 @@
-import menu from "./data.js";
+// import menu from "./data.js";
+import { LoadDishes } from "./api.js";
+const menu = await LoadDishes();
+console.log(menu);
 
 const sortedMenu = menu.sort((a, b) => a.name > b.name ? 1 : -1);
 
@@ -7,11 +10,11 @@ const addToBusket = () => {
 		elem.addEventListener('click', () => {
 			const keyword = elem.parentElement.dataset.keyword;
 			const dish = sortedMenu.find(el => el.keyword === keyword);
-			busket[dish.category] = { name: dish.name, price: dish.price }
+			busket[`${dish.category}`] = { name: dish.name, price: dish.price }
 	
 			const orderElem = document.getElementById(`${dish.category}_order`);
 			orderElem.getElementsByClassName('order-type-description')[0]
-			.innerHTML = `${busket[dish.category].name} ${busket[dish.category].price}&#8381`;
+			.innerHTML = `${busket[`${dish.category}`].name} ${busket[`${dish.category}`].price}&#8381`;
 	
 			orderElem.getElementsByClassName('order-type-description')[1].value = keyword;
 	
@@ -36,7 +39,7 @@ const render = (dataMenu = sortedMenu, category = '') => {
 		dishElem.dataset.keyword = dataMenu[i].keyword;
 		// создаем картинку
 		let img = document.createElement('img');
-		img.src = dataMenu[i].img;
+		img.src = dataMenu[i].image;
 		img.alt = dataMenu[i].category;
 		dishElem.appendChild(img);
 	
@@ -53,7 +56,7 @@ const render = (dataMenu = sortedMenu, category = '') => {
 	
 		let weight = document.createElement('span');
 		weight.classList.add('weight');
-		weight.innerHTML = dataMenu[i].weight;
+		weight.innerHTML = dataMenu[i].count;
 		dishElem.appendChild(weight);
 	
 		// создаем кнопку
@@ -74,14 +77,14 @@ render();
 
 const orderPrice = document.getElementById('order_price');
 
-let busket = {
-	soup: {name: '', price: 0},
-	main_dish: {name: '', price: 0},
-	juice: {name: '', price: 0},
-	salad_starter: {name: '', price: 0},
-	dessert: {name: '', price: 0},
+export let busket = {
+	'soup': {name: '', price: 0},
+	'main-course': {name: '', price: 0},
+	'salad': {name: '', price: 0},
+	'drink': {name: '', price: 0},
+	'dessert': {name: '', price: 0},
 	price: function () {
-		return this.soup.price + this.main_dish.price + this.juice.price + this.salad_starter.price + this.dessert.price;
+		return this['soup'].price + this['main-course'].price + this['drink'].price + this['salad'].price + this['dessert'].price;
 	}
 };
 

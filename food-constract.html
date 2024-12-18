@@ -26,6 +26,96 @@
 	</header>
 
 	<main>
+
+		<div class="combo-block">
+			<h2>Доступные для заказа комбо</h2>
+			<div class="combo-content">
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/soup.png" alt="">
+						<p>Суп</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/main.png" alt="">
+						<p>Главное блюдо</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/salad.png" alt="">
+						<p>Салат</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/drink.png" alt="">
+						<p>Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/soup.png" alt="">
+						<p>Суп</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/main.png" alt="">
+						<p>Главное блюдо</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/drink.png" alt="">
+						<p>Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/soup.png" alt="">
+						<p>Суп</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/salad.png" alt="">
+						<p>Салат</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/drink.png" alt="">
+						<p>Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/main.png" alt="">
+						<p>Главное блюдо</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/salad.png" alt="">
+						<p>Салат</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/drink.png" alt="">
+						<p>Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/main.png" alt="">
+						<p>Главное блюдо</p>
+					</div>
+					<div class="combo-elem">
+						<img src="./src/icons/drink.png" alt="">
+						<p>Напиток</p>
+					</div>
+				</div>
+
+				<div class="combo-elems-wrapper">
+					<div class="combo-elem">
+						<img src="./src/icons/desert.png" alt="">
+						<p>Десерт</p>
+						<p style="font-size: 1.5rem;"><i>(Можно добавить к любому заказу)</i></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
 		<div class="block">
 			<h2>Выберите суп</h2>
 			<section>
@@ -46,7 +136,7 @@
 					<button class="filter" data-kind="fish" data-isActive="false">рыбное</button>
 					<button class="filter" data-kind="veg" data-isActive="false">вегeтарианское</button>
 				</div>
-				<div id="main_dish" class="food"></div>
+				<div id="main-course" class="food"></div>
 			</section>
 		</div>
 
@@ -58,7 +148,7 @@
 					<button class="filter" data-kind="fish" data-isActive="false">рыбное</button>
 					<button class="filter" data-kind="veg" data-isActive="false">вегeтарианское</button>
 				</div>
-				<div id="salad_starter" class="food"></div>
+				<div id="salad" class="food"></div>
 			</section>
 		</div>
 
@@ -69,7 +159,7 @@
 					<button class="filter" data-kind="cold" data-isActive="false">холодное</button>
 					<button class="filter" data-kind="hot" data-isActive="false">горячее</button>
 				</div>
-				<div id="juice" class="food"></div>
+				<div id="drink" class="food"></div>
 			</section>
 		</div>
 
@@ -77,8 +167,8 @@
 			<h2>Выберите десерт</h2>
 			<section>
 				<div class="filters">
-					<button class="filter" data-kind="big" data-isActive="false">большая порция</button>
-					<button class="filter" data-kind="middle" data-isActive="false">средняя порция</button>
+					<button class="filter" data-kind="large" data-isActive="false">большая порция</button>
+					<button class="filter" data-kind="medium" data-isActive="false">средняя порция</button>
 					<button class="filter" data-kind="small" data-isActive="false">маленькая порция</button>
 				</div>
 				<div id="dessert" class="food"></div>
@@ -88,7 +178,7 @@
 		<!--сделать заказ-->
 		<div class="make-order">
 			<h2>Сделать заказ</h2>
-			<form action="https://httpbin.org/post" method="post">
+			<form id="form" action="https://httpbin.org/post" method="post">
 				<div class="form-block">
 					<div class="form-block-wrapper">
 						<p>Ваш заказ</p>
@@ -99,7 +189,7 @@
 							<p class="order-type-description"></p>
 							<input class="order-type-description" type="hidden" name="soup">
 						</div>
-						<div id="main_dish_order" class="order-elem">
+						<div id="main-course_order" class="order-elem">
 							<p class="order-type-name">
 								Главное блюдо
 							</p>
@@ -107,7 +197,7 @@
 							<input class="order-type-description" type="hidden" name="main-dish">
 						</div>
 
-						<div id="salad_starter_order" class="order-elem">
+						<div id="salad_order" class="order-elem">
 							<p class="order-type-name">
 								Салат
 							</p>
@@ -115,7 +205,7 @@
 							<input class="order-type-description" type="hidden" name="salad_starter">
 						</div>
 
-						<div id="juice_order" class="order-elem">
+						<div id="drink_order" class="order-elem">
 							<p class="order-type-name">
 								Напиток
 							</p>
@@ -231,5 +321,6 @@
 		</div>
 	</footer>
 	<script type="module" src="./scripts/food-constract/index.js"></script>
+	<script type="module" src="./scripts/food-constract/notifications.js"></script>
 </body>
 </html>
